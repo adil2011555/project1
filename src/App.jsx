@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { getJobs } from "./firebase/api";
 import { FourSquare } from "react-loading-indicators";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { SiPinetwork } from "react-icons/si";
 
 import JobForm from "./components/JobForm";
 import JobList from "./components/JobList";
 import JobFilter from "./components/JobFilter";
+import Footer from "./components/Footer";
 import styles from "./styles/App.module.css";
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
   return (
     <div className={styles.appContainer}>
       <header className={styles.header}>
+        <SiPinetwork size={40} />
         <h1 className={styles.title}>Job Board (Вакансия тактасы)</h1>
       </header>
 
@@ -66,7 +69,7 @@ function App() {
               src="https://lottie.host/4b1b8832-f930-4e0e-86f8-168d6e6de893/aJn8kzwhOM.lottie"
               loop
               autoplay
-              className={styles.errorAnimation} 
+              className={styles.errorAnimation}
             />
           </div>
         ) : (
@@ -84,9 +87,7 @@ function App() {
         )}
       </main>
 
-      <footer className={styles.footer}>
-        &copy; 2026 Job Board Долбоору - 1-студенттин иши
-      </footer>
+      <Footer />
     </div>
   );
 }
