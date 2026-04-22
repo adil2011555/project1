@@ -12,8 +12,8 @@ function Footer() {
               <p className={footerStyles.logoText}>JOB BOARD</p>
 
               <p className={footerStyles.descriptionText}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
+                We are a team of designers and developers that create high quality
+                software. Get in touch with us to know more about our services.
               </p>
 
               <ul className={footerStyles.socialList}>
@@ -169,7 +169,7 @@ function Footer() {
           <hr className={footerStyles.divider} />
 
           <p className={footerStyles.copyright}>
-            © Copyright 2021, All Rights Reserved by Postcraft
+            © 2024 Job Board. All rights reserved.
           </p>
         </div>
       </section>
