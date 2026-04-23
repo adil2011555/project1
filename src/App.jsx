@@ -1,3 +1,6 @@
+import React from 'react'
+import JobList from './components/JobList'
+import JobCard from './components/JobCard'
 import { useState, useEffect } from "react";
 import { getJobs } from "./firebase/api";
 import { FourSquare } from "react-loading-indicators";
@@ -42,6 +45,9 @@ function App() {
   }, []);
 
   return (
+    <div style={{ backgroundColor: "#ffffff", minHeight: "100vh" }}>
+      <JobList />
+      <JobCard />
     <div>
       <header className={styles.header}>
         <div className={styles.logo}>
