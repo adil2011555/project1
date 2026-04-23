@@ -19,26 +19,24 @@ import Footer from "./components/Footer";
 import styles from "./styles/App.module.css";
 
 function App() {
-  const [jobs, setJobs] = useState([]); // Базадан келген вакансиялар топтому
-  const [loading, setLoading] = useState(true); // Жүктөлүү абалы
-  const [error, setError] = useState(null); // Каталарды сактоочу абал
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
 
-  // Firestore'дон маалыматтарды алып келүүчү функция
   const fetchJobs = async () => {
     try {
-      setLoading(true); // Жүктөөнү баштайбыз
-      setError(null); // Мурунку каталарды тазалайбыз
-      const data = await getJobs(); // Биздин api.js ичиндеги функцияны чакырабыз
-      setJobs(data); // Базадан келген маалыматты абалга (state) сактайбыз
+      setLoading(true);
+      setError(null); 
+      const data = await getJobs();
+      setJobs(data); 
     } catch (err) {
       console.error("Ката кетти:", err);
       setError("Вакансияларды жүктөөдө ката кетти. Байланышты текшериңиз.");
     } finally {
-      setLoading(false); // Жүктөө бүттү (ийгиликтүү же ката менен)
+      setLoading(false);
     }
   };
 
-  // Проект биринчи жолу ачылганда маалыматтарды бир жолу жүктөп алабыз
   useEffect(() => {
     fetchJobs();
   }, []);
@@ -96,9 +94,7 @@ function App() {
           {/* 4-СТУДЕНТТИН КОМПОНЕНТИ: Издөө жана фильтрлөө */}
           <JobFilter jobs={jobs} setFilteredJobs={setJobs} />
 
-          {/* АБАЛДАРДЫ БАШКАРУУ (Loading / Error / List) */}
           {loading ? (
-            // Жүктөлүү учурунда көрсөтүлүүчү анимация
             <div className={styles.loading}>
               <FourSquare
                 color="#37388e"
@@ -108,7 +104,6 @@ function App() {
               />
             </div>
           ) : error ? (
-            // Ката кеткенде көрсөтүлүүчү билдирүү
             <div className={styles.errorContainer}>
               <DotLottieReact
                 src="https://lottie.host/4b1b8832-f930-4e0e-86f8-168d6e6de893/aJn8kzwhOM.lottie"
@@ -123,7 +118,6 @@ function App() {
               {/* 3-СТУДЕНТТИН КОМПОНЕНТИ: Вакансиялардын тизмеси */}
               <JobList jobs={jobs} onJobDeleted={fetchJobs} />
 
-              {/* Тизме компоненти даяр боло электеги убактылуу билдирүү */}
               <div className={styles.temp}>
                 <p className={styles.tempText}>
                   Учурда базада <strong>{jobs.length}</strong> вакансия табылды.
