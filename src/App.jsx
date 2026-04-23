@@ -4,7 +4,7 @@ import JobCard from './components/JobCard'
 
 const App = () => {
   return (
-    <div style={{ backgroundColor: "#f9f9f9", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#ffffff", minHeight: "100vh" }}>
       <JobList />
       <JobCard />
     </div>
