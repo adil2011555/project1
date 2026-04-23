@@ -1,4 +1,3 @@
-/* Footer Container */
 .footerWrapper {
   padding-top: 64px;
   background-color: #1f2937;
@@ -13,7 +12,6 @@
   padding: 0;
 }
 
-/* Grid Layout */
 .footerGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -40,7 +38,6 @@
   }
 }
 
-/* Left Section - Logo & Social */
 .leftSection {
   grid-column: span 2;
 }
@@ -71,7 +68,6 @@
   margin-top: 20px;
 }
 
-/* Social Links */
 .socialList {
   display: flex;
   align-items: center;
@@ -107,8 +103,6 @@
   height: 18px;
 }
 
-/* Footer Sections */
-
 .sectionTitle {
   font-size: 11px;
   font-weight: 700;
@@ -142,7 +136,6 @@
   border-bottom-color: #3b82f6;
 }
 
-/* Newsletter Section */
 .newsletterSection {
   grid-column: span 2;
 }
@@ -222,14 +215,12 @@
   outline: none;
 }
 
-/* Divider */
 .divider {
   margin: 24px 0 0;
   border: none;
   border-top: 1px solid #374151;
 }
 
-/* Copyright */
 .copyright {
   font-size: 13px;
   text-align: center;
